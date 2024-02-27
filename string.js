@@ -44,3 +44,4 @@ let todaydate1 = new Date(2024, 0, 21)
 console.log(todaydate.toLocaleString())
     //get time in seconds, using
 console.log(Math.floor(Date.now() / 1000))
+    //getDay,getMonth,getTime

@@ -34,10 +34,30 @@ console.log(details.fulname.lastname)
     // let's have two object declared then how add object2 into object1
     //......Object.assign()
 const details2 = {
-    roll: 345,
+    roll: 345
 }
 const details3 = Object.assign({}, details, details2)
 console.log(details3)
 console.log({...details, ...details2 })
 console.log(Object.keys(details))
 console.log(Object.values(details))
+    //console.log(details.hasownproperty(id)) //return true
+    //how object is destructure, let's see
+const { roll } = details2
+console.log(roll)
+const { roll: i } = details2 //destructure happens
+console.log(i) //destructing makes easier to u for easy accesing object component
+    //API is nothing is just value comes form other sources and makes your work much comfortable.
+    //in earlier , value sof API was stored in xml file, now stored in json file
+    //.................API..json file
+    //1.json file is just like object with creating its name and keys also written in diuble qutes
+    // {
+    //     "login":"suruchi",
+    //     "id":123
+    // }
+    //sometimes API is in array format means json file details is in format of array yoo
+    [{
+
+    }, {
+
+    }]

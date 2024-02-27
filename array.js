@@ -37,3 +37,4 @@ console.log(result) //flat just simplify each elememnt
     //use of Array.from() for converting one type into array type.
 let str1 = "suruchi"
 console.log(Array.from(str1))
+    //Array.of for converting one rtype into array.
