@@ -46,8 +46,46 @@ console.log(3 + "4")
     //let counter = 100
 let counter1 = 50
     //let res = counter++
-let res1 = counter1++
-    //console.log(counter++)
+let res1 = counter1++ //res value still be 50 but in pre increemnt it get increased by1
+    //console.log(counter++)// value will increase by 1
     //console.log(res)
-    //console.log(++counter1)
+    //console.log(++counter1) value will increase by 1
     console.log(res1)
+    //typescript doesn't allow to compare two daraatype
+console.log("1" > 2)
+console.log("02" > 2)
+console.log(null > 0)
+console.log(null == 0)
+console.log(null >= 0)
+    //Note: Comaprison ('>','<','<=','>=') and equality check bot fuction different 
+    //while comparision, null contverted into number
+
+//difference in '==' : equality check opeartor  and '===' strict equality
+//while equality operator conversion also happens, 
+console.log("2" == "2")
+console.log("2" === 2)
+    //1st show true becuase "2"-> string to number and then check 
+    //2nd show false, "2" value as wel as type is also checked hence false
+    //Datatype is categorised on basis of how it is store in memory and how to access. 
+    //on above basis, two type: primitive and non primitive/reference
+    //primitive data type is through just -call by value by this, copy is provided to you, no reference is given.
+    //PRIMITIVE DATATYPE: 7 HAI, 1.NUMBER,2.STRING,3.BOLLEAN,4.BIGINT,5.UNDEFINED,6.NULL,7.SYMBOL
+    //while in non primitive , reference is given.
+    //NONPRIMITIVE DAYTYPE: ARRAY,OBJECT,FUNCTION
+
+const arr = ["sh", "sk", "12"] //array
+console.log(arr)
+let check = { //object  daat type always occur in key value pair under curly braces
+    name: "suruchi",
+    email: "snjjm",
+    pass: 123
+}
+
+const myfunction = function() {
+    console.log("hii")
+}
+
+const add = function() {
+    console.log(2 + 3)
+}
+console.log(check, add(), myfunction())
