@@ -6,6 +6,10 @@ html {
 /* style.css */
 
 .navbar {
+    top: 0;
+    left: 0;
+    /* places navbar to top leftleft  */
+    /* width: 100%; */
     background-color: #333;
     /* Dark gray background */
     color: #fff;
@@ -30,6 +34,7 @@ html {
 
 .navbar a {
     text-decoration: none;
+    text-align: center;
     /* Remove underlines from links */
     color: white;
     /* Inherit color from the navbar itself */
