@@ -1,2 +1,2 @@
 # JsGAme
-Just experienced this repo for learning purpose
+It's for javascript from basics to DOM, Oops, also have Project Created.
