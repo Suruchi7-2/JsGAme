@@ -1,0 +1,108 @@
+html {
+    margin: 0;
+}
+
+
+/* style.css */
+
+.navbar {
+    background-color: #333;
+    /* Dark gray background */
+    color: #fff;
+    /* White text */
+    display: flex;
+    /* Arrange elements horizontally */
+    justify-content: space-between;
+    /* Evenly distribute links horizontally */
+    padding: 10px 20px;
+    /* Add some padding for visual balance */
+    border-bottom: 2px solid #222;
+    /* Optional subtle border */
+    position: fixed;
+    /* Fix the navbar to the top of the page for better accessibility */
+    top: 0;
+    /* Position it at the top */
+    width: 100%;
+    /* Make it full-width */
+    z-index: 999;
+    /* Ensure it stays above other content */
+}
+
+.navbar a {
+    text-decoration: none;
+    /* Remove underlines from links */
+    color: white;
+    /* Inherit color from the navbar itself */
+    font-weight: bold;
+    /* Make links stand out slightly */
+    padding: 8px 16px;
+    /* padding Add space around element,here it add top,bottotom left right space around content and box.some padding for clickability */
+    /* border-radius: 5px; */
+    /* Add subtle rounded corners */
+    transition: background-color 0.3s ease-in-out;
+    /* Smooth hover effect */
+}
+
+.navbar a:hover {
+    background-color: black;
+    /* Change background color on hover */
+    color: yellow;
+    /* Slightly lighten text on hover */
+}
+
+.navbar a[aria-current="page"] {
+    background-color: grey;
+    /* Highlight the current page link */
+}
+
+span {
+    display: block;
+}
+
+.canvas {
+    margin: 100px auto 100px;
+    width: 80%;
+    text-align: center;
+}
+
+.button {
+    width: 70px;
+    height: 30px;
+    border: solid black 2px;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+#black {
+    background: black;
+    color: #fff;
+}
+
+#white {
+    background: white;
+}
+
+#green {
+    background: green;
+}
+
+#yellow {
+    background: yellow;
+}
+
+.center {
+    display: flex;
+    /* height: 100vh; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#clock {
+    font-size: 40px;
+    background-color: black;
+    color: white;
+    padding: 20px 50px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
