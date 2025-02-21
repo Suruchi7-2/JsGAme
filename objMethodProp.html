@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>JavaScript Objects</h1>
+    <h2>Object Methods</h2>
+    <p>A method is a function definition stored as a property value.</p>
+
+    <p id="demo"></p>
+
+    <script>
+      const person = {
+        age: 15,
+        isAdult: function () {
+          return this.age >= 18 ? "Adult" : "Not Adult";
+        },
+      };
+      document.getElementById("demo").innerHTML =
+        "You atre a adult: " + person.isAdult();
+    </script>
+  </body>
+</html>
