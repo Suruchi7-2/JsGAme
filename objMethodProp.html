@@ -25,17 +25,111 @@ git push -u origin main-->
     <h2>Object Methods</h2>
     <p>A method is a function definition stored as a property value.</p>
 
-    <p id="demo"></p>
+    <p id="demo1"></p>
 
     <script>
       const person = {
+        //object m property ke saath method daal skte ho
         age: 15,
         isAdult: function () {
-          return this.age >= 18 ? "Adult" : "Not Adult";
+          return this.age >= 18 ? "Adult" : "Not Adult"; //return statement m aap terneray operator ka use kr lo
         },
       };
-      document.getElementById("demo").innerHTML =
-        "You atre a adult: " + person.isAdult();
+      document.getElementById("demo1").innerHTML =
+        "You atre a adult: " + person.isAdult(); //calling object method objectname.methodname
+    </script>
+
+    <p id="demo"></p>
+
+    <script>
+      const person1 = {
+        name: Suruchi,
+        age: 15,
+        isAdult: function () {
+          const messages = {
+            true: "You are an adult.",
+            false: "You are not an adult.",
+          };
+          return messages[this.age >= 18];
+        },
+      };
+
+      document.getElementById("demo").innerHTML = person1.isAdult();
+    </script>
+
+    <!-- use terneray operator in method
+ Objects are objects
+Maths are objects
+Functions are objects
+Dates are objects
+Arrays are objects
+Maps are objects
+Sets are objects
+All JavaScript values, except primitives, are objects. -->
+    <p id="demo2"></p>
+
+    <script>
+      const person2 = {
+        age: 21,
+        isAdult: function () {
+          return this.age >= 18 ? "Adult" : "child";
+        },
+        //make object's property's value an object means object ke inside ibject
+        mycontactno: {
+          personalno: 620001234,
+          officeno: 123445678,
+          gharno: 34636763,
+        },
+      };
+      //add proeprties into existing object
+      person2.ismarraige = false;
+      //delete eistng prperty f obejct usng delete .
+      delete person2.ismarraige;
+      //after deletion of obj property , it hsows undefined
+      document.getElementById("demo2").innerHTML =
+        person2.isAdult() +
+        " is person marraige:  " +
+        person2.ismarraige +
+        "<br>Suurchi's all phone no: " +
+        JSON.stringify(person2.mycontactno) +
+        "<br><hr>Another way to print value of  nested object: " +
+        Object.values(person2.mycontactno).join(", "); //USE JSON.STRINGIFY TO PRIT VALUES OF OBJCT AS A S JSON OBJECT
+      //JB nested object ki saari values print krni ho then , we can also use objct.values()
+      //USE OBJECTNAME.NESTEDOBJECTNAME.PROPERTYNAME ISSEY NESTED OBJECT KI PARTICUALR OBJECT PROPERTY VALUE MILENG
+      // ........ dispaly object usinh 3 ways Displaying the Object using Object.values().join(", ")
+      // Displaying the Object using JSON.stringify() ad loop
+      //using loop thus way
+      //let text = "";
+      // for (let x in objectname) {
+      //   text += objectname[x] + " ";
+      // };
+
+      alert("Age is: " + person2.age);
+    </script>
+    <!-- creating object type by constructor function ek type define kro fir multiple object bani usi type ke
+  -->
+    <p id="demo4"></p>
+
+    <script>
+      // Constructor Function for Person objects
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      // Create a Person object
+      const myFather = new Person("John", "Doe", 50, "blue");
+      const mymother = new Person("shital", "dei", 12, "black");
+
+      // Display age
+      document.getElementById("demo4").innerHTML =
+        "create type of objet by cunstrutor func and then use different object of one object type <hr> Like father ,mother is object of person object type.My father is " +
+        myFather.age +
+        "." +
+        "Mother = " +
+        Object.values(mymother).join(", ");
     </script>
   </body>
 </html>
