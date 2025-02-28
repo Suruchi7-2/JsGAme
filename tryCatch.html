@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="input" type="text" />
+    <input id="input1" type="number" max="100" min="1" step="1">
+    <button id="clickME" onclick="clickMe()">Check Input</button>
+    <p id="show"></p>
+    <!-- now js script will evaluate ki input bas no ho btw 5 to 10 otherwise use throw for throwing custom errror
+  -->
+    <script>
+      function clickMe()
+      {
+          let takevalue=document.getElementById("input").value;
+          let displaymsg=document.getElementById("show");
+          try{
+            console.log("find")
+            if(takevalue.trim()==""){throw "empty value";}
+
+            if(isNaN(takevalue)){throw "Not a Number";}
+            let num = Number(takevalue);
+              if (num<5){throw "too low";}
+              if(num>10){throw "too high";}
+            
+                displaymsg.innerHTML="Valid INput is: "+num;
+            
+             
+          }
+          catch(err)
+          {
+              displaymsg.innerHTML="Input is: "+err;
+          }
+
+
+      }
+    </script>
+    <h2>With "use strict":</h2>
+<h3>Deleting a variable (or object) is not allowed.</h3>
+
+<p>Activate debugging in your browser (F12) to see the error report.</p>
+
+<script>
+"use strict";
+let x = 3.14;
+delete x;  // This will cause an error //delete sirf object proeprties ke leiwork krega.
+</script>
+  </body>
+</html>

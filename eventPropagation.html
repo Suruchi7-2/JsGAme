@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Capturing Example</title>
+    <style>
+      #div1 {
+        padding: 24px;
+        margin: 2px;
+        border: 2px solid black;
+      }
+      #div2 {
+        padding: 12px;
+        margin: 2px;
+        border: 2px solid black;
+      }
+      #div3 {
+        padding: 5px;
+        margin: 2px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      Div1
+      <div id="div2">
+        Div2
+        <div id="div3">Div3</div>
+      </div>
+    </div>
+    <!-- EVent propagation in js 
+ Bubbling : jb inner se outer ki aur event propagate ho tehn by default js use bubbling
+ Bubling mai jaise ye teen div hai tum agar div3 pr clcik krige jo child h two div ka then bubblin hoga 
+ like div3 ki event call hogi plus div2 and div 1 ki
+ 
+ Aisey hi div2 pr event call hogi to event 1 ki bhi call hogi.
+
+ -->
+    <!-- Capturing: but jb tum eventlistner function ki third parameter true krte ho to bubbling ke
+  jgah capturing hoga h. let's know Capturing
+  Capturing: jab event propage hote h from outer elelmnt to inner elemnt
+  like jb div 2 pr click event kroge then div1 ki event call hogi pehle then div2 ki from outer to inner
+  -->
+    <!-- e.stopPropagation(): iska use tum tab krogey jab tum chhaogey ki event propaogate n ho
+   from child to parent bu default jo bubbling hoti hai like child ke event ko call kro to uske parenr 
+   ke evnt bhi call hote hai. -->
+    <script>
+      //       // Correct Example (Pure Capturing)
+      // Agar tum chaahte ho ki poora capturing mode me chale (outer to inner), toh sabhi elements ke event listeners ka third parameter true hona chahiye:
+      //
+      document.querySelector("#div1").addEventListener("click", () => {
+        console.log("Div1 clicked (Capturing)");
+      });
+
+      document.querySelector("#div2").addEventListener(
+        "click",
+        (e) => {
+          console.log("Div2 clicked (Capturing)");
+          e.stopPropagation(); //call back function m stopPropagation() for stopping event propagation.
+        }
+        //
+      );
+
+      document.querySelector("#div3").addEventListener("click", (e) => {
+        console.log("Div3 clicked (Capturing)");
+        e.stopImmediatePropagation(); // Capturing phase yahi ruk jayega
+      });
+    </script>
+  </body>
+</html>

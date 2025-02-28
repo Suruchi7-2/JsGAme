@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Basic String Methods
+Javascript strings are primitive and immutable: All string methods produce a new string without altering the original string. -->
+  </head>
+  <body>
+    <!-- String Methods.............. 
+     1.charAt()-->
+    <p>
+      The charAt() method returns the character at a given position in a string:
+    </p>
+
+    <p id="demo4"></p>
+
+    <script>
+      var text = "HELLO WORLD";
+      document.getElementById("demo4").innerHTML = text.charAt(0);
+    </script>
+    <!-- 2.   Extracting String Parts
+There are 3 methods for extracting a part of a string:
+
+slice(start, end)
+substring(start, end)
+substr(start, length) -->
+    <h1>JavaScript String Methods</h1>
+    <p>
+      The substring() method extract a part of a string and returns the
+      extracted parts in a new string:
+    </p>
+
+    <p id="demo5"></p>
+
+    <script>
+      let str = "Apple, Banana, Kiwi";
+      document.getElementById("demo5").innerHTML = str.substring(7, 13);
+    </script>
+    <!--3. Converting to Upper and Lower Case
+A string is converted to upper case with toUpperCase():
+
+A string is converted to lower case with toLowerCase(): -->
+
+    <h2>What u will do, If u need double quotes inside string in js?.....</h2>
+    <p>Hey: I will use backslash \"\" just like this.</p>
+    <h3 id="seequote"></h3>
+    <p id="see"></p>
+
+    <!-- 4 JavaScript String trim()
+The trim() method removes whitespace from both sides of a string: -->
+    <!-- JavaScript String repeat()
+The repeat() method returns a string with a number of copies of a string.
+
+The repeat() method returns a new string.
+
+The repeat() method does not change the original string. -->
+    <!-- 5replace : can replace a string . also can replace all amcthes in string but use regular experession / with g flag
+  -->
+    <h1>JavaScript String Methods</h1>
+    <p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="replacemicrosoftmatches">Please visit Microsoft and Microsoft!</p>
+
+    <script>
+      function myFunction() {
+        let text = document.getElementById("replacemicrosoftmatches").innerHTML;
+        document.getElementById("replacemicrosoftmatches").innerHTML =
+          text.replace(/Microsoft/g, "W3Schools"); // ✅ Using Regular Expression with 'g' flag
+      }
+    </script>
+    <!-- 6. JavaScript String ReplaceAll()
+In 2021, JavaScript introduced the string method replaceAll():
+
+Example
+text = text.replaceAll("Cats","Dogs");
+text = text.replaceAll("cats","dogs");
+ -->
+<!-- 7. JavaScript String includes()
+The includes() method returns true if a string contains a specified value.
+
+Otherwise it returns false. -->
+    <script>
+        let text3=`hey 'SK' `;
+        console.log(text3);                 
+      let text1 = "s";
+      let text2 = "k";
+      // alert("hey");
+      console.log(text1 + text2);
+      document.getElementById("see").innerHTML = text1 + text2;
+
+      // if u need quotes inside string
+      // u should use backslash then opening quotes then again backslash then closing quotes
+      let mystring = "Suruchi will take blank  double quotes inside string '' ";
+      document.getElementById("seequote").innerHTML =
+        "See This string I printed has used quotes inside it: <br>" + mystring;
+    </script>
+    <!-- Note: \n will not work for chnaging line wehn u used innerHTML, textcontent ke time work kregi baaki
+     js ke script m bhi kregi like console ke time m  hence innerHTML ke time use <br> tag  -->
+
+    <!-- Why Does Comparing Two JavaScript Objects Always Return false?
+In JavaScript, when you compare two objects using == or ===, it compares their references in memory, not their actual values. If two objects have the same properties and values but are stored in different memory locations, they are considered different. -->
+  </body>
+</html>

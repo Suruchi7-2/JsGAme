@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .box {
+    width: auto; /* Auto width so content is visible */
+    min-width: 100px; /* Minimum width for better visibility */
+    height: auto; /* Adjust height automatically */
+    padding: 10px;
+    border: 1px solid black;
+    margin:2px;
+}
+.newClass{
+    color:yellow;
+}
+#h2{
+    color:red;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Let‘s Practice
+
+Qs. Create a H2 heading element with text - “Hello JavaScript”
+
+. Append “from Apna College
+
+students” to this text using JS. -->
+
+<!-- 2. Qs. Create 3 divs with common class name - “box”
+
+. Access them & add some unique text to each
+
+of them. -->
+
+<h2 id="h2">"Hello JavaScript"</h2>
+<!-- create class box common for 3div. -->
+ <div class="box">Div1
+    <div class="box">Div2
+        <div class="box">Div3</div>
+</div>
+</div>
+
+<!-- 3. Qs. Create a new button element. Give it a text “click me”
+
+, background color of red & text color
+
+of white.
+
+Insert the button as the first element inside the body tag. -->
+<!-- now use js to append some more text to h2 elemnt -->
+ <script>
+   let h2= document.querySelector("h2");
+   h2.innerHTML=h2.innerHTML+ " Apna Ghar";
+   console.dir(h2);
+   //completed practice1 task
+   let nodelist=document.querySelectorAll(".box");
+  // console.dir(nodelist);
+  // console.log(nodelist);
+  let idx = 1;
+
+for (let div of nodelist) {
+    // Naya text node create karo
+    let newText = document.createTextNode(` - New Content ${idx}`);
+    
+    // Existing structure ko preserve karne ke liye, bas text append karo
+    div.appendChild(newText);
+    
+    idx++;
+}
+        //console.dir(nodelist);
+        let newBtn=document.createElement("button");
+      let newBtn1 =newBtn.innerHTML="Click Me";
+     let bBg=newBtn.style.backgroundColor="grey";
+    let bC= newBtn.style.color="white";
+     newBtn.style.height="50px";
+     newBtn.style.width="130px";
+     newBtn.style.fontSize="20px";
+        let bdy=document.querySelector("h2");
+        bdy.prepend(newBtn);
+      newBtn.addEventListener("click",()=>{
+         let bBg = newBtn.style.backgroundColor; // Current background color
+    let bC = newBtn.style.color; // Current text color
+
+    if (bBg === "grey" && bC === "white") {
+        newBtn.style.backgroundColor = "yellow";
+        newBtn.style.color = "black";
+    } 
+    else if (bBg === "yellow" && bC === "black") {
+        newBtn.style.backgroundColor = "green";
+        newBtn.style.color = "white";
+    } 
+    else {
+        newBtn.style.backgroundColor = "grey"; // Reset to original
+        newBtn.style.color = "white";
+    }
+    });
+    
+    //My learning. agar node add krna h by js follow 2 steps 
+    //createElement se us tag aur elemnt ko add kro as above
+    //now style daals kte ho iscratedleemnt pr using .style
+    //ab isey chrome pr dikahne ke lie use prepend method, ya append ya ya before ya after
+    //elemnt create kiya hua tum kis element ke peble ya baad dikhana chhate go decide kra hoga
+    //like agar prepend use krte ho to jis bhi elemnt ya tag ko use kiye ho uske sabse pehle add hoga
+    //aagr append use kroge div tag m to sbse neeche aakr add hogi
+    //now tum chahte ho tumhari newcreayedElemnt pr js event perform ho to addevnetlistenervala use ro
+   
+    //4. Qs. Create a <p> tag in html, give it a class & some styling.
+// Now create a new class in CSS and try to append this class to the <p> element.
+
+// Solve this problem using classList.
+let ptag= document.createElement("p");
+ptag.innerHTML="THis is SK";
+ptag.style.fontSize="20px";
+//access vo element jsike baad ya peeche p tag ko add kroge
+let body1=document.querySelector("body");
+body1.prepend(ptag);
+setTimeout(()=>{
+    ptag.classList.add("newClass");
+    
+},5000);
+
+//   classList.add se kisi elemt ya tag pr class add kr kste ho 
+// use of getAttribute
+letgetid=document.querySelector("h2").getAttribute("h2")
+letgetid.setAttribute("h2")
+   </script>
+</body>
+</html>
